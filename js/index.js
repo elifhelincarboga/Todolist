@@ -23,9 +23,10 @@ function newElement () {
   const myToast = $('#liveToast.success')
   myToast.toast('show')
 
+  $(span).on('click', removeTask)
   $(element).on('click', toogleTask)
 
-  var storedTasks = JSON.parse(localStorage.getItem("tasks"));
+  let storedTasks = JSON.parse(localStorage.getItem("tasks"));
   if (!storedTasks) {
     let arr = []
     arr.push(text)
@@ -70,8 +71,8 @@ $(document).ready(function() {
     span.innerHTML = 'x'
     element.appendChild(span)
     $(span).on('click', removeTask)
-    list.appendChild(element)
     $(element).on('click', toogleTask)
+    list.appendChild(element)
   }
 });
 
