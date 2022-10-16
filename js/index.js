@@ -13,6 +13,10 @@ function newElement () {
   }
 
   const element = createElement(text)
+  const span = document.createElement('span')
+  span.style.float = 'right'
+  span.innerHTML = 'x'
+  element.appendChild(span)
   let list = document.getElementById('list')
   list.appendChild(element)
 
